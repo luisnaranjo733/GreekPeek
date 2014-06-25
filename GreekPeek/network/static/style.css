@@ -1,0 +1,268 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+* { margin:0;padding:0;outline:0;}
+body {
+	line-height: 1.6em;
+    color: rgb(133, 133, 133);
+    font-family: 'Source Sans Pro', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 13px;
+	background: #FFF;
+}
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+	outline: 0 none;
+}
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1;
+}
+
+/* Links */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #005580;
+}
+
+hr {
+    border:0;
+    border-bottom:1px solid #DDD;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
+	line-height: 1.3;
+	margin: 0.5em 0;
+	font-weight:400;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+/*-------------------------
+	Input
+--------------------------*/
+input[type=button], input[type=submit], input[type=reset], .button1 {
+    border:0;
+    background: #eee;
+    padding: 6px 10px;
+    border: 0;
+    color: #777;
+    transition: color .3s ease,background .3s ease;
+    -webkit-transition: color .3s ease,background .3s ease;
+    -moz-transition: color .3s ease,background .3s ease;
+    text-decoration: none;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, .button1:hover {
+    color: white;
+    background: #2980b9;
+    text-decoration: none;
+}
+.button2 {
+    border:0;
+    background: #2980b9;
+    padding: 6px 10px;
+    color: white;
+    text-decoration: none;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+.button2:hover {
+    color: white;
+    background: #2980b9;
+    text-decoration: none;
+}
+
+input[type=text], input[type=password] {
+    color:#555;
+    font-size:14px;
+    padding:4px;
+    border:1px solid #CFD3D6;
+    display:block;
+    border-radius:3px;
+    margin:6px 0;
+    max-width:600px;
+    width:100%;
+    font-weight:normal;
+    line-height:18px;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+
+/*-------------------------
+	Layout
+--------------------------*/
+#frame {
+    background: #fff;
+}
+
+.wrapper {
+    max-width: 1050px;
+    width:100%;
+    margin: 0 auto;
+}
+
+#banner {
+    padding-top: 10px;
+}
+
+#branding {
+    float: left;
+}
+
+#branding h1, #branding h2 {
+    margin: 0;
+    color: black;
+}
+
+#signin-box {
+    float: right;
+    margin: 10px;
+}
+
+#navbar {
+    border-bottom: 3px solid #f1f2f6;
+    min-height: 45px;
+}
+
+#navbar ul {
+    list-style-type:none;
+}
+#navbar ul li {
+    float: left;
+    padding: 10px 20px;
+}
+#navbar ul li:first-child {
+    padding-left: 0;
+}
+#navbar a {
+    font-family: 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
+    color: rgb(26,26,26);
+    font-size: 16px;
+}
+
+#content {
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+
+#cover-slideshow-area {
+    overflow: hidden;
+}
+
+.cover-slideshow-complement-container {
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 100;
+}
+.cover-slideshow-complement {
+    padding: 15px 30px;
+    min-height: 150px;
+    max-width: 220px;
+    color: white;
+    background: rgb(21, 112, 166);
+    margin: 10px;
+    z-index: 100;
+    display: inline-block;
+    -webkit-animation: slideIn;
+    -moz-animation: slideIn;
+    -o-animation: slideIn;
+    animation: slideIn;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    font-family: 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.content-bar {
+    min-height: 25px;
+    background: #e3e3e3;
+}
+
+#footer {
+    padding: 10px;
+    background-color: #f1f2f6;
+    height: 50px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#main-content {
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+    padding: 5px;
+}
+
+legend {
+    text-align: center;
+    font-size: 24pt;
+}
+
+.required {
+    color: red;
+}
+
+.wrapper fieldset {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.wrapper h2 {
+    text-align: center;
+    padding-top: 0px;
+}
+
+#submit {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+fieldset {
+    border: 0;
+}

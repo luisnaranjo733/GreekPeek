@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div id="cover-slideshow-area" style="background:#fcfcfc;position:relative;">
+    <link rel="stylesheet" href="http://students.washington.edu/humzam/js/slidejs/slidejs.css">
+    <script src="http://students.washington.edu/humzam/js/slidejs/jquery.slides.min.js"></script>
+    <div class="slide-container" style="max-width: 1050px;">
+        <div id="cover-slides" style="position:relative;">
+            <img src="http://i.imgur.com/NSS9twj.jpg">
+            <img src="http://i.imgur.com/yHtYzqr.jpg">
+            <img src="http://i.imgur.com/riFNWAa.jpg">
+            <img src="http://i.imgur.com/tisFTij.jpg">
+            <img src="http://i.imgur.com/yqrOgAj.jpg">
+            <img src="http://i.imgur.com/kf41Nff.jpg">
+            <img src="http://www.futurereads.com/wp-content/uploads/2010/11/fraternity.jpg">
+            <img src="http://students.washington.edu/humzam/images/chocolate run phi delts.jpg" alt="">
+            <img src="http://students.washington.edu/humzam/images/IMG_0047_small.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        $(function() {
+          $('#cover-slides').slidesjs({
+            width: 650,
+            height: 278,
+            play: {
+              active: true,
+              auto: true,
+              interval: 4000,
+              swap: true
+            }
+          });
+        });
+    </script>
+    <style>
+    .slidesjs-navigation { display: none !important; }
+    .slidesjs-pagination {
+        position: absolute;
+        bottom: 0;
+        z-index: 50;
+        right: 0;
+        margin: 5px;
+        z-index: 150;
+    }
+    
+    .slidesjs-pagination li a:hover {
+        background: #2980b9;
+    }
+    </style>
+    <div class="cover-slideshow-complement-container">
+        <div class="cover-slideshow-complement">
+            <h2>GreekPeek</h2>
+            <p>"GreekPeek is awesome!" - Humza</p>
+        </div>
+    </div>
+    <style>
+    @media (max-width: 580px) {
+        .cover-slideshow-complement-container {
+            max-width: auto;
+            width: auto;
+            margin: auto;
+            position: static;
+        }
+        
+        .cover-slideshow-complement {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding-bottom: 8px;
+            padding-top: 8px;
+            min-height: 100px;
+        }
+    }
+    
+    @-webkit-keyframes slideIn{
+        0%{margin-left:3%;opacity:0}
+        100%{margin-left:10px;opacity:1}
+    }
+    @-moz-keyframes slideIn{
+        0%{margin-left:3%;opacity:0}
+        100%{margin-left:10px;opacity:1}}
+    @-o-keyframes slideIn{
+        0%{margin-left:3%;opacity:0;}
+        100%{margin-left:10px;opacity:1;}
+    }
+    @keyframes slideIn{
+        0%{margin-left:3%;opacity:0}
+        100%{margin-left:10px;opacity:1}
+    }
+    </style>
+</div>
+
+<div class="content-bar" style="background:#f1f2f6">
+</div>
+
+<div class="cover-panel" style="padding-bottom:60px;">
+    <div class="wrapper">
+        <div class="content">
+            <h1 style="text-align:center;color:#3482E6">The GreekPeek Advantage</h1>
+            <div class="cover-advantage-col">
+                <h2>Text Message Updates</h2>
+                <p>Fraternity Recruitment Chairs can send text message updates to inform potential new members of social recruitment events</p>
+            </div>
+            <div class="cover-advantage-col">
+                <h2>Fraternities List</h2>
+                <p>Find a list of fraternities at your school with ease</p>
+            </div>
+            <div class="cover-advantage-col">
+                <h2>Ease of Use</h2>
+                <p>GreekPeek is easy to use, clean and simple</p>
+            </div>
+            <div class="clearfix"></div>
+            <style>
+            .cover-advantage-col {
+                width: 33%;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                padding: 10px;
+                float: left;
+                text-align: center;
+                font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            }
+            
+            .cover-advantage-col h2 {
+                color: #3482E6;
+            }
+            
+            .cover-advantage-col p {
+                color: #808080;
+                font-size: 15px;
+            }
+            @media (max-width: 650px) {
+                .cover-advantage-col {
+                    width: 100%;
+                    float: none;
+                }
+            }
+            </style>
+        </div>
+    </div>
+</div>
+
+<div class="cover-panel" style="background: #1570a6; color: white; margin-top: 20px;padding-bottom:20px;">
+    <div class="wrapper">
+        <div class="content" style="width:60%;float:right;">
+            <h1 style="color: white">Why Should I Join A Fraternity?</h1>
+            <p>Fratenity life is one of the most life-changing and rewarding experience offered to gentlemen in college. With a tradition
+            of more than 180 years, fraternities strive for a high level of excellence and success. Through individual chapter academic
+            enrichment and community service programs, fraternity men have played an influential role on their campus, in their surrounding
+            area, and throughout the country. Many fraternity men have gone on to lead success careers, manage major companies, guide international
+            philathropic foundations, and hold high offices in the government.</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="cover-panel" style="margin-top: 20px;padding-bottom:20px;">
+    <div class="wrapper">
+        <div class="content" style="width:60%">
+            <h1>Why Should I Use This Website?</h1>
+            <p>The recruitment process can be overwhelming and scary for both the recruits and the fraternities.
+            Here at Greek Peek we want to make the rushing process easier for both parties by offering a platform that simplifies the recruitment
+            process. Through Greek Peek, recruits can learn about the fraternities available to them, narrow down their choices, and get in contact
+            with recruitment chairs. Greek Peek allows recruitment chairs to have access to a list of students interested in joining fraternities,
+            schedule meet up times with recruits, and send mass messages about recruitment events. </p>
+        </div>
+    </div>
+</div>
+
+<style>
+.cover-panel {
+}
+
+.cover-panel p {
+    font-size: 17px;
+    line-height: 28px;
+}
+</style>
+
+{% endblock body %}
