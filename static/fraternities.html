@@ -1,0 +1,310 @@
+<!-- Home page for Greek Peek -->
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+        <meta name=viewport content='width=device-width, initial-scale=1'>
+        <title>Greek Peek</title>
+        <link rel='stylesheet' href='style.css' type='text/css' media='all' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   </head>
+
+    <body>
+        <div id="frame">
+            <div id="banner">
+                <div class="wrapper">
+                    <div id="branding">
+                        <div id="logo"></div>
+                        <h1 id="title"><a href="greekpeek.html">GreekPeek</a></h1>
+                    </div>
+                    <div id="signin-box">
+                        <a href="#" class="button2">Sign in</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div id="navbar">
+                <div class="wrapper">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="#">Fraternities</a></li>
+                        <li><a href="member-signup.html">Member Sign-Up</a></li>
+                    </ul>
+                </div>
+            </div>
+
+			<div id="content">
+                <div class="wrapper">
+                    <div id="main-content" role="main">
+                        <form>
+                            <h2 class="frat-list-label">University of Washington Fraternities</h2>
+                            <ul class="frat-list">
+                                <li class="frat-details" data-frat-id="1">
+                                    <input type="checkbox" name="frat-selected-1" />
+                                    <h2>ABC</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-abc.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="2">
+                                    <input type="checkbox" name="frat-selected-2" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="3">
+                                    <input type="checkbox" name="frat-selected-3" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="4">
+                                    <input type="checkbox" name="frat-selected-4" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="5">
+                                    <input type="checkbox" name="frat-selected-5" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="6">
+                                    <input type="checkbox" name="frat-selected-6" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="7">
+                                    <input type="checkbox" name="frat-selected-7" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="8">
+                                    <input type="checkbox" name="frat-selected-8" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                                <li class="frat-details" data-frat-id="9">
+                                    <input type="checkbox" name="frat-selected-9" />
+                                    <h2>DEF</h2>
+                                    <div class="clearfix"></div>
+                                    
+                                    <p>placeholder details</p>
+                                    <a class="frat-more" href="fraternity-def.html">See more</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div id="frat-with-selected">
+                                <h4>With selected...</h4>
+                                <select name="action">
+                                    <option>Subscribe to SMS updates</option>
+                                    <option>Unsubscribe from SMS updates</option>
+                                </select>
+                                <input type="submit" value="Go" />
+                            </div>
+                        </form>
+                        
+                        <h2 class="frat-list-label" style="margin-top: 30px;">Map</h2>
+                        <div id="frat-map">
+                            <noscript style="margin:15px;">
+                                This map requires JavaScript to work properly.
+                            </noscript>
+                            
+                            <img src="images/map.jpg" alt="Map"/>
+                            
+                            <div class='pin' style="top: 100px; left: 100px;" onclick="toggle_frat_details(1)">
+                                <div class="pin-id">ABC</div>
+                            </div>
+                            <div class='pin' style="top: 150px; left: 200px;" onclick="toggle_frat_details(2)">
+                                <div class="pin-id">DEF</div>
+                            </div>
+                            
+                            <div class="frat-details" data-frat-id="1">
+                                <div class="frat-details-close" onclick="toggle_frat_details($(this).parent().attr('data-frat-id'))">Close</div>
+                                <h2>ABC</h2>
+                                <p>placeholder details</p>
+                                <a class="frat-more" href="fraternity-abc.html">See more</a>
+                            </div>
+                            <div class="frat-details" data-frat-id="2">
+                                <div class="frat-details-close" onclick="toggle_frat_details($(this).parent().attr('data-frat-id'))">Close</div>
+                                <h2>DEF</h2>
+                                <p>placeholder details</p>
+                                <a class="frat-more" href="fraternity-def.html">See more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                function toggle_frat_details(id) {
+                    $('[data-frat-id='+id+']').toggle();
+                }
+                </script>
+                <style>
+                #frat-with-selected {
+                    padding: 10px;
+                    border: 1px solid #e3e3e3;
+                    margin-top: 10px;
+                }
+
+                #frat-with-selected select {
+                    border: 1px solid #e3e3e3;
+                    padding: 4px;
+                }
+
+                #frat-with-selected h4 {
+                    margin-top: 0;
+                }
+
+                .frat-list-label {
+                    margin: 0;
+                    margin-top: 5px;
+                    padding-bottom: 3px;
+                    margin-bottom: 5px;
+                    border-bottom: 1px solid #e3e3e3;
+                }
+                .frat-list {
+                    list-style-type: none;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                .frat-list .frat-details {
+                    display: block;
+                    width: 25%;
+                    box-sizing: border-box;
+                    padding: 10px;
+                    float: left;
+                }
+                .frat-list .frat-details h2 {
+                    display: block;
+                    float: left;
+                }
+                .frat-list .frat-details input[type=checkbox] {
+                    display: block;
+                    margin-right: 14px;
+                    margin-top: 22px;
+                    float: left;
+                }
+
+                #frat-map {
+                    position: relative;
+                    border: 3px solid #e3e3e3;
+                    margin-bottom: 50px;
+                    margin-top: 10px;
+                }
+
+                .frat-more {
+                    display: inline-block;
+                    margin-top: 15px;
+                }
+
+                #frat-map .frat-details {
+                    display: none;
+                    position: relative;
+                    border: 3px solid #e3e3e3;
+                    padding: 5px 10px;
+                    margin-bottom: 10px;
+                    background: white;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 20px;
+                    padding-bottom: 15px;
+                    margin: 100px 200px;
+                }
+                #frat-map .frat-details-close {
+                    position: absolute;
+                    top:0;
+                    right:0;
+                    padding: 5px;
+                    margin: 20px;
+                    cursor: pointer;
+                }
+
+                #frat-map .pin {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50% 50% 50% 0;
+                    background: #89849b;
+                    position: absolute;
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    left: 0px;
+                    top: 0px;
+                    margin: -20px 0 0 -20px;
+                    transition: background .3s ease;
+                    -webkit-transition: background .3s ease;
+                    -moz-transition: background .3s ease;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    cursor: pointer;
+                }
+                #frat-map .pin-id {
+                    position: absolute;
+                    z-index: 150;
+                    margin-top: 28px;
+                    margin-left: -32px;
+                    padding: 0px 3px;
+                    background: #89849b;
+                    color: white;
+                    -webkit-transform: rotate(45deg);
+                    padding: 3px 8px;
+                    transition: background .3s ease;
+                    -webkit-transition: background .3s ease;
+                    -moz-transition: background .3s ease;
+                }
+                #frat-map .pin:hover {
+                    background: #9E98B3;
+                }
+                #frat-map .pin:hover .pin-id {
+                    background: #9E98B3;
+                }
+
+                #frat-map .pin:after {
+                    content: "";
+                    width: 14px;
+                    height: 14px;
+                    margin: 8px 0 0 8px;
+                    background: #fff;
+                    position: absolute;
+                    border-radius: 50%;
+                }
+                </style>
+            </div>
+            
+			<div id="footer">
+                <div class="wrapper">
+                    &copy 2014 Greek Peek <br /> 
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+		</div>
+	</body>
+
+</html>
