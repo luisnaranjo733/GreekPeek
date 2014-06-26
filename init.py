@@ -43,6 +43,8 @@ if not Chapter.objects.count() > 0:
     chapter.save()
 else:
     chapter = Chapter.objects.get(pk=1)
+    
+recruit.subscribe(chapter)
 
 if not RushChair.objects.count() > 0:
     rushChair = RushChair()
