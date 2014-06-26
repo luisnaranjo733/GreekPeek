@@ -13,13 +13,14 @@ from django.contrib.auth import get_user_model
 from network.models import *
 
 if not User.objects.count() > 2:
-    user = get_user_model().objects.create_user('john@gmail.com', 'test')
-    user.firstName = 'john'
-    user.lastName = 'Dahl'
+    user = get_user_model().objects.create_user('michael@gmail.com', 'test')
+    user.firstName = 'Michael'
+    user.lastName = 'Assefa'
     user.save()
 
     user2 = get_user_model().objects.create_user('bill@gmail.com', 'test')
-    user2.firstName = 'bill'
+    user2.firstName = 'Bill'
+    user2.lastName = 'Koski'
     user2.save()
 else:
     user = User.objects.get(pk=1)
@@ -28,8 +29,8 @@ if not Recruit.objects.count() > 0:
     recruit = Recruit()
     recruit.user = user
     recruit.grade = 'Freshman'
-    recruit.phone = '206-478-4652'
-    recruit.major = 'bioE'
+    recruit.phone = '206-787-2713'
+    recruit.major = 'Electrical Engineering'
     recruit.bio = 'Loves to take long walks on the beach'
     recruit.save()
 else:
