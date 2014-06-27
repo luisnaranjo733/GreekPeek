@@ -4,7 +4,7 @@
 
 {% if user.is_authenticated %}
 <div id="overall_admin_header">
-    <span>Rush Chair Admin Panel</span>
+	<span>Rush Chair Admin Panel - {{ chapter }}</span>
     <span><a href="/">Site Index</a></span>
     
     <span class="fr"><a href="/logout" class="button2">Sign out ({{ user.firstName }})</a></span>

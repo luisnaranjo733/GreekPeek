@@ -13,44 +13,50 @@ from django.contrib.auth import get_user_model
 from network.models import *
 
 if not User.objects.count() > 2:
-    user = get_user_model().objects.create_user('michael@gmail.com', 'test')
+    user = get_user_model().objects.create_user('michael@gmail.com', 'test') # rushee
     user.firstName = 'Michael'
     user.lastName = 'Assefa'
     user.save()
+    print 'Initialized user: %s' % str(user)
 
-    user2 = get_user_model().objects.create_user('bill@gmail.com', 'test')
+    user2 = get_user_model().objects.create_user('bill@gmail.com', 'test') # rushChair
     user2.firstName = 'Bill'
     user2.lastName = 'Koski'
     user2.save()
+    print 'Initialized user: %s' % str(user2)
 else:
     user = User.objects.get(pk=1)
 
 if not Recruit.objects.count() > 0:
-    recruit = Recruit()
+    recruit = Recruit() # rushee contact info
     recruit.user = user
     recruit.grade = 'Freshman'
     recruit.phone = '206-787-2713'
     recruit.major = 'Electrical Engineering'
     recruit.bio = 'Loves to take long walks on the beach'
     recruit.save()
+    print 'Intialized user (%s) as a rushee' % user
 else:
     recruit = Recruit.objects.get(pk=1)
 
-if not Chapter.objects.count() > 0:
+if not Chapter.objects.count() > 0: # chapter rushee is rushing + chapter of rush chair
     chapter = Chapter()
     chapter.college = 'uw'
     chapter.name = 'Phi Delta Theta'
     chapter.save()
+    recruit.subscribe(chapter)
+    print 'Initialized chapter: %s' % chapter
+    print 'Subscribed recruit (%s) to rush %s' % (recruit, chapter)
 else:
     chapter = Chapter.objects.get(pk=1)
     
-recruit.subscribe(chapter)
 
 if not RushChair.objects.count() > 0:
-    rushChair = RushChair()
+    rushChair = RushChair() # rushChair deets
     rushChair.chapter = chapter
     rushChair.user = user2
     rushChair.save()
+    print 'Intialized user (%s) as a rush chair' % user2
 else:
     rushChair = RushChair.objects.get(pk=1)
 

@@ -68,12 +68,15 @@ class Chapter(models.Model):
     name = models.CharField(max_length=80, null=True)
     bio = models.TextField(null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 class RushChair(models.Model):
     chapter = models.ForeignKey(Chapter)
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     phone = models.CharField(max_length=12, null=True, blank=True)
+
+    def __str__(self):
+        return '%s of %s' % (user, chapter)
 
 

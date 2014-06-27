@@ -53,6 +53,7 @@ def rushAdmin(request):
     if request.method == 'GET':
         rushChair = RushChair.objects.get(user=request.user)
         params['rushing'] = rushChair.chapter.recruit_set.all()
+        params['chapter'] = rushChair.chapter
         return render(request, 'blast.html', params)
     else:
         textBody = request.POST.get('text')
