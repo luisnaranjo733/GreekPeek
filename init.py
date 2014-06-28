@@ -12,7 +12,7 @@ from django.contrib.auth import get_user_model
 
 from network.models import *
 
-if not User.objects.count() > 2:
+if not User.objects.count() > 1:
     user = get_user_model().objects.create_user('michael@gmail.com', 'test') # rushee
     user.firstName = 'Michael'
     user.lastName = 'Assefa'
@@ -24,8 +24,15 @@ if not User.objects.count() > 2:
     user2.lastName = 'Koski'
     user2.save()
     print 'Initialized user: %s' % str(user2)
+
+    user3 = get_user_model().objects.create_user('luis@gmail.com', 'test') # rushee
+    user3.firstName = 'Luis'
+    user3.lastName = 'Naranjo'
+    user3.save()
+    print 'Initialized user: %s' % str(user3)
 else:
     user = User.objects.get(pk=1)
+    user3 = User.objects.get(pk=3)
 
 if not Recruit.objects.count() > 0:
     recruit = Recruit() # rushee contact info
@@ -36,6 +43,15 @@ if not Recruit.objects.count() > 0:
     recruit.bio = 'Loves to take long walks on the beach'
     recruit.save()
     print 'Intialized user (%s) as a rushee' % user
+
+    recruit2 = Recruit()
+    recruit2.user = user3
+    recruit2.grade = 'Sophomore'
+    recruit2.phone = '206-478-4652'
+    recruit2.major = 'Undecided'
+    recruit2.bio = 'I\m kind of on the fence about rushing'
+    recruit2.save()
+    print 'Intialized user (%s) as a rushee' % user3
 else:
     recruit = Recruit.objects.get(pk=1)
 
@@ -45,8 +61,10 @@ if not Chapter.objects.count() > 0: # chapter rushee is rushing + chapter of rus
     chapter.name = 'Phi Delta Theta'
     chapter.save()
     recruit.subscribe(chapter)
+    recruit2.subscribe(chapter)
     print 'Initialized chapter: %s' % chapter
     print 'Subscribed recruit (%s) to rush %s' % (recruit, chapter)
+    print 'Subscribed recruit (%s) to rush %s' % (recruit2, chapter)
 else:
     chapter = Chapter.objects.get(pk=1)
     
@@ -67,7 +85,7 @@ Sigma Phi Epsilon
 Zeta Beta Tau
 Phi Psi
 Pi Kappa Alpha
-Alpha Delpha Phi
+Alpha Delta Phi
 Alpha Epsilon Pi
 Alpha Sigma Phi
 Alpha Tau Omega
