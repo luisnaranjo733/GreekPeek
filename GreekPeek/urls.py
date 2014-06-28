@@ -6,21 +6,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'network.views.home'),
-    url(r'^signUp/', 'network.views.signUp'),
-    url(r'^signIn/', 'network.views.logIn'),
-    url(r'^fraternities/', 'network.views.fraternities'),
-    url(r'^whyJoin/', 'network.views.whyJoin'),
-    url(r'^rushAdmin/', 'network.views.rushAdmin'),
-    url(r'^login/', 'network.views.logIn'),
-    url(r'^logout/', 'network.views.logOut'),
-    url(r'^contactUs/', 'network.views.contactUs'),
-    url(r'^formComplete/', 'network.views.formComplete'),
-    url(r'^policies/', 'network.views.policies'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^json/(.+)/$', 'network.views.ajax'),
-    url(r'^names/', 'network.views.namesTest'),
-    url(r'^profileSettings', 'network.views.profileSettings'),
-    url(r'^profileSettings2', 'network.views.profileSettings2'),
+    url(r'^facebook/', include('django_facebook.urls')),
+    url(r'^accounts/', include('django_facebook.auth_urls')), #Don't add this line if you use django registration or userena for registration and auth.
 
 )
 
