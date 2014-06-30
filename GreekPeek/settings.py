@@ -12,22 +12,40 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+# my stuff
 
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates'),
+FACEBOOK_APP_ID = '1471617479745132'
+FACEBOOK_APP_SECRET = '0ac12e59b6bc6301cb50b661557bef08'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'django_facebook.context_processors.facebook',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'django_facebook.auth_backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
-FACEBOOK_APP_ID = '1471617479745132'
-FACEBOOK_APP_SECRET = '0ac12e59b6bc6301cb50b661557bef08'
+STATIC_ROOT = '/home/lnaran/webapps/site_media/'
+
+# my stuff
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-^@#v-6v&o&xhtq46@r4eq-%fm7h$68l)x$blvsrh@qrmr^gie'
+SECRET_KEY = 'rmy#s8+!vd!ip7u@nb&4^xsjrp#)c@bigrl$b$yx1+9^=y$7(='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,8 +66,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_facebook',
-    'custom_user',
-    'network',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,23 +110,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# overrides below here
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.core.context_processors.request',
-
-    'django.contrib.messages.context_processors.messages',
-    'django_facebook.context_processors.facebook',
-)
-
-AUTHENTICATION_BACKENDS = (
-    'django_facebook.auth_backends.FacebookBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
