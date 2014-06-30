@@ -16,6 +16,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 FACEBOOK_APP_ID = '1471617479745132'
 FACEBOOK_APP_SECRET = '0ac12e59b6bc6301cb50b661557bef08'
+FACEBOOK_DEFAULT_SCOPE = ['email', 'user_about_me', 'user_birthday', 'user_website']
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -37,6 +38,12 @@ AUTHENTICATION_BACKENDS = (
 AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
 STATIC_ROOT = '/home/lnaran/webapps/site_media/'
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates'),
+)
 
 # my stuff
 
