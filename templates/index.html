@@ -4,6 +4,13 @@
     <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
 {% endblock %}
 
+{% block navbar %}
+
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">Choose your campus</a></li>
+
+{% endblock %}
+
 
 {% block body %}
 
@@ -18,7 +25,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Example headline.</h1>
@@ -28,7 +35,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -75,7 +82,7 @@
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="http://placehold.it/140x140" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <img class="img-circle img-responsive" src="http://placehold.it/140x140" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
