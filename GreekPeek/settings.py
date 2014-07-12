@@ -35,7 +35,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+#AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+AUTH_USER_MODEL = 'network.CustomFacebookUser'
 
 STATIC_ROOT = '/home/lnaran/webapps/site_media/'
 
@@ -73,6 +74,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_facebook',
+    'network',
 )
 
 MIDDLEWARE_CLASSES = (
