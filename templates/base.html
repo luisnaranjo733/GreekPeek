@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static "bootstrap-theme.min.css" %}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
               </button>
               
               <a class="navbar-brand" href="/">
-                <img style="max-width:100px; margin-top: -7px;" id="logo" src="http://i.imgur.com/sDgreg3.jpg">
+                <img style="max-width:100px; margin-top: -7px;" id="logo" src="{% static "sDgreg3.jpg" %}">
               </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -84,8 +84,8 @@
     {% endblock body %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static "jquery.min.js" %}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="{% static "bootstrap.min.js" %}"></script>
   </body>
 </html>
