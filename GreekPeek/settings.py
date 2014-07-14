@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from platform import platform
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -38,9 +39,12 @@ AUTHENTICATION_BACKENDS = (
 #AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 AUTH_USER_MODEL = 'network.CustomFacebookUser'
 
-STATIC_ROOT = '/home/lnaran/webapps/site_media/'
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+
+if platform() == 'Linux-2.6.32-431.1.2.0.1.el6.x86_64-x86_64-with-centos-6.5-Final': # production
+    STATIC_ROOT = '/home/lnaran/webapps/site_media/'
+else:
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'collectedStatic')
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
