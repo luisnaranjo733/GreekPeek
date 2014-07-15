@@ -53,6 +53,9 @@
               <ul class="nav navbar-nav">
                 {% block navbar %}
                 <li class="active"><a href="/">Home</a></li>
+                {% if user.is_superuser %}
+                <li><a href="/admin">Admin</a></li>
+                {% endif %}
                 <li><a href="/campus">Choose your campus</a></li>
                 {% endblock %}
               </ul>
