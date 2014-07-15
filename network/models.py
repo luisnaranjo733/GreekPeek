@@ -6,23 +6,12 @@ from django_facebook.models import FacebookModel, get_user_model
 from django_facebook.utils import get_profile_model
 from django.contrib.auth.models import AbstractUser, UserManager
 
-'''
-try:
-    # There can only be one custom user model defined at the same time
-    if getattr(settings, 'AUTH_USER_MODEL', None) == 'network.CustomFacebookUser':
-        from django.contrib.auth.models import AbstractUser, UserManager
-        class CustomFacebookUser(AbstractUser, FacebookModel):
-            """
-            The django 1.5 approach to adding the facebook related fields
-            """
-            objects = UserManager()
-            # add any customizations you like
-            state = models.CharField(max_length=255, blank=True, null=True)
-except ImportError as e:
-    logger.info('Couldnt setup FacebookUser, got error %s', e)
-    pass
 
-'''
+class Campus(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 class CustomFacebookUser(AbstractUser, FacebookModel):
     '''
@@ -30,7 +19,6 @@ class CustomFacebookUser(AbstractUser, FacebookModel):
     '''
     objects = UserManager()
     # add any customizations you like
-    state = models.CharField(max_length=255, blank=True, null=True)
-
+    campus = models.ForeignKey(Campus, null=True) # has to be null for super user creation
 
 
