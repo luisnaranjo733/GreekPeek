@@ -19,6 +19,6 @@ class CustomFacebookUser(AbstractUser, FacebookModel):
     '''
     objects = UserManager()
     # add any customizations you like
-    campus = models.ForeignKey(Campus, null=True) # has to be null for super user creation
+    campus = models.ForeignKey(Campus, blank=True, null=True, on_delete=models.SET_NULL) # prevent cascading
 
 
