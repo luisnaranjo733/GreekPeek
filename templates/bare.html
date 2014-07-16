@@ -56,7 +56,11 @@
                 {% if user.is_superuser %}
                 <li><a href="/admin">Admin</a></li>
                 {% endif %}
+                {% if user.campus %}
+                <li><a href="/campus">{{ user.campus }}</a></li>
+                {% else %}
                 <li><a href="/campus">Choose your campus</a></li>
+                {% endif %}
                 {% endblock %}
               </ul>
               <ul class="nav navbar-nav pull-right">

@@ -2,5 +2,25 @@
 
 {% block body %}
         <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <p class="lead">
+          {% if user.campus %}
+          Campus listing for {{ user.campus }} goes here.
+          {% else %}
+          Campus selection goes here
+          {% endif %}
+        </p>
+        
+        <p>
+          {% for state, campuses in states.items %}
+            <h4>{{ state }}</h4>
+            <ul>
+              {% for campus in campuses %}
+              <li><a href="{{ campus.get_absolute_url }}">{{ campus }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        </p>
 {% endblock %}
+
+<ul>
+    
