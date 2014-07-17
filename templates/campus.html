@@ -11,14 +11,19 @@
         </p>
         
         <p>
-          {% for state, campuses in states.items %}
-            <h4>{{ state }}</h4>
-            <ul>
-              {% for campus in campuses %}
-              <li><a href="{{ campus.get_absolute_url }}">{{ campus }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endfor %}
+          <form action="/campus/" method="POST">{% csrf_token %}
+            <select class="selectpicker" name="campus">
+            {% for state, campuses in states.items %}
+              <!--<optgroup label="{{ state }}">-->
+                {% for campus in campuses %}
+                <option value="{{ campus.name }}">{{ campus.name }}</option>
+                {% endfor %}
+              </optgroup>
+            {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+          </form>
+          
         </p>
 {% endblock %}
 

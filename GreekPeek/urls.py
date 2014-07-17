@@ -6,8 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'network.views.index', name='index'),
     url(r'^campus/$', 'network.views.campusSelection'),
-    # url(r'^blog/', include('blog.urls')),
-
+    url(r'^user/(?P<pk>\d+)/$', 'network.views.userProfile'),
     url(r'^admin/', include(admin.site.urls)),
 
     (r'^facebook/', include('django_facebook.urls')),

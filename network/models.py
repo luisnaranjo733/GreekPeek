@@ -15,7 +15,7 @@ class Campus(models.Model):
     state = models.CharField(max_length=80, choices=states)
 
     def __str__(self):
-        return self.nickname if self.nickname else self.name
+        return self.name
 
     def get_absolute_url(self):
         return '/campus/%s/' % self.__str__()
