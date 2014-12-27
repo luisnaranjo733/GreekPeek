@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h1>List of Fraternities</h1>
+        <ul class="list-group">
+        {% for chapter in chapters %}
+          <li class="list-group-item">{{ chapter }}</li>
+        {% endfor %}
+        </ul>
+
+
+{% endblock body %}
