@@ -85,3 +85,36 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+chapter_names = ['Alpha Delta Phi',
+ 'Alpha Epsilon Pi',
+ 'Alpha Sigma Phi',
+ 'Alpha Tau Omega',
+ 'Chi Psi',
+ 'Delta Chi',
+ 'Delta Tau Delta',
+ 'Delta Upsilon',
+ 'Kappa Alpha Order',
+ 'Kappa Sigma',
+ 'Lambda Chi Alpha',
+ 'Phi Delta Theta',
+ 'Phi Gamma Delta',
+ 'Phi Kappa Psi',
+ 'Phi Kappa Sigma',
+ 'Phi Kappa Tau',
+ 'Phi Kappa Theta',
+ 'Pi Kappa Alpha',
+ 'Pi Kappa Phi',
+ 'Psi Upsilon',
+ 'Sigma Alpha Epsilon',
+ 'Sigma Beta Rho',
+ 'Sigma Chi',
+ 'Sigma Nu',
+ 'Sigma Phi Epsilon',
+ 'Tau Kappa Epsilon',
+ 'Theta Chi',
+ 'Theta Delta Chi',
+ 'Theta Xi',
+ 'Zeta Beta Tau',
+ 'Zeta Psi']
+
