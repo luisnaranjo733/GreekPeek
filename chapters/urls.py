@@ -5,4 +5,5 @@ from chapters import views
 
 urlpatterns = patterns('',
     url(r'^$', views.ChapterListView.as_view(), name='index'),
+    url(r'^(?P<pk>\d+)/$', views.ChapterDetailView.as_view(), name='profile'),
 )

@@ -5,7 +5,7 @@
     <h1>List of Fraternities</h1>
         <ul class="list-group">
         {% for chapter in chapters %}
-          <li class="list-group-item">{{ chapter }}</li>
+          <li class="list-group-item"><a href="{{ chapter.get_absolute_url }}">{{ chapter }}</a></li>
         {% endfor %}
         </ul>
 

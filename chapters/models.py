@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 from ifc_grades.models import GradeReport
 
@@ -10,6 +11,9 @@ class Chapter(models.Model):
     
     def __str__(self):
         return self.nickName
+        
+    def get_absolute_url(self):
+        return '/chapters/%d' % self.pk
         
     def get_recent_grade_reports(self, number_of_reports=3):
         '''Returns a list of the most recent grade reports'''
