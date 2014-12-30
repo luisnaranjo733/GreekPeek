@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     
     'chapters',
+    'ifc_grades',
 )
 
 MIDDLEWARE_CLASSES = (
