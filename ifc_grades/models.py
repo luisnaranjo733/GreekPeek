@@ -1,17 +1,9 @@
 from django.db import models
 
-from chapters.models import Chapter
 
 class GradeReport(models.Model):
-    choices = (
-        ('Fall', 'Fall'),
-        ('Winter', 'Winter'),
-        ('Spring', 'Spring'),
-    )
-
-    chapter = models.ForeignKey(Chapter)
-    quarter = models.CharField(max_length=10, choices=choices) # Fall, Winter, or Spring
-    year = models.IntegerField()
+    chapter = models.ForeignKey('chapters.Chapter')
+    day_in_that_quarter = models.DateField()
     
     cumulative_gpa = models.DecimalField(max_digits=3, decimal_places=2)
     new_member_gpa = models.DecimalField(max_digits=3, decimal_places=2)
@@ -19,4 +11,28 @@ class GradeReport(models.Model):
     students_on_deans_list = models.IntegerField()
     
     def __str__(self):
-        return '%s grades of %s %d' % (self.chapter, self.quarter, self.year)
+        key = (self.chapter,
+            self.get_quarter(),
+            self.day_in_that_quarter.year
+        )
+        return '%s grades of %s %d' % key
+        
+    def get_quarter(self):
+        '''Tells what quarter grade report is from.'''
+        day = self.day_in_that_quarter.timetuple().tm_yday
+
+        # "day of year" ranges for the northern hemisphere
+        spring = range(80, 172)
+        summer = range(172, 264)
+        fall = range(264, 355)
+        # winter = everything else
+
+        if day in spring:
+            season = 'Spring'
+        elif day in summer: # This probably shouldn't be here
+            season = 'Summer'
+        elif day in fall:
+            season = 'Fall'
+        else:
+            season = 'Winter'
+        return season
