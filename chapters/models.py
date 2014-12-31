@@ -13,7 +13,7 @@ class Chapter(models.Model):
         return self.nickName
         
     def get_absolute_url(self):
-        return '/chapters/%d' % self.pk
+        return '/chapters/%s' % self
         
     def get_recent_grade_reports(self, number_of_reports=3):
         '''Returns a list of the most recent grade reports'''

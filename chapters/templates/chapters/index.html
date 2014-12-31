@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block body %}
+<div role="tabpanel">
 
-    <h1>List of Fraternities</h1>
-        <ul class="list-group">
-        {% for chapter in chapters %}
-          <li class="list-group-item"><a href="{{ chapter.get_absolute_url }}">{{ chapter }}</a></li>
-        {% endfor %}
-        </ul>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">View by location</a></li>
+    <li role="presentation"><a href="#grades" aria-controls="grades" role="tab" data-toggle="tab">View by grades</a></li>
+  </ul>
 
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="location">
+      Insert location view here
+    </div>
+    <div role="tabpanel" class="tab-pane" id="grades">
+      Insert grade view here
+    </div>
+  </div>
 
+</div>
 {% endblock body %}
+
+
+{% block js %}
+    <script src="{% static 'home/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock js %}
