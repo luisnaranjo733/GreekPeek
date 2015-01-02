@@ -9,6 +9,9 @@ class Chapter(models.Model):
     size = models.IntegerField(default=0)
     bio = models.TextField()
     
+    latitude = models.DecimalField (max_digits=10, decimal_places=7)
+    longitude = models.DecimalField (max_digits=10, decimal_places=7)
+    
     def __str__(self):
         return self.nickName
         
