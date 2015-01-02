@@ -7,7 +7,8 @@ from chapters.models import Chapter
 
 class ChapterListView(ListView):
     model = Chapter
-    template_name = 'chapters/index.html'
+    #template_name = 'chapters/index.html'
+    template_name = 'chapters/index_map_view.html' # for development
     context_object_name = 'chapters'
     
 class ChapterDetailView(DetailView):
