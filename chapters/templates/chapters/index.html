@@ -1,6 +1,52 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block head %}
+    <script src="{% static 'home/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <style type="text/css">
+      #map-canvas {
+        width: 700px;
+        height: 400px;
+        margin-top: 20px; 
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSXUMPeor7xm69HzponL7xEqISHd3SrIU">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 47.6629, lng: -122.3070346},
+          zoom: 17
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+            
+        {% for chapter in chapters %}
+        var Latlng_{{ chapter.pk }} = new google.maps.LatLng({{ chapter.latitude }}, {{ chapter.longitude }});
+        var marker_{{ chapter.pk }} = new google.maps.Marker({
+            position: Latlng_{{ chapter.pk }},
+            map: map,
+            title:"Hello World!",
+            animation: google.maps.Animation.DROP,
+        });
+        
+        google.maps.event.addListener(marker_{{ chapter.pk }}, 'click', function() {
+          $('#{{ chapter.pk }}').modal('show')
+        });
+        {% endfor %}
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    
+    </script>
+{% endblock %}
+
 {% block body %}
 <div role="tabpanel">
 
@@ -13,7 +59,29 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="location">
-      Insert location view here
+
+      <div id="map-canvas"></div>
+      {% for chapter in chapters %}
+      <!-- Modal -->
+      <div class="modal fade" id="{{ chapter.pk }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">{{ chapter.name }}</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>  
+      {% endfor %}
+
     </div>
     <div role="tabpanel" class="tab-pane" id="grades">
       Insert grade view here
