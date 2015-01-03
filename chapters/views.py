@@ -8,10 +8,9 @@ from chapters.models import Chapter
 class ChapterListView(ListView):
     model = Chapter
     template_name = 'chapters/index.html'
-    #template_name = 'chapters/index_map_view.html' # for development
     context_object_name = 'chapters'
     
-class ChapterDetailView(DetailView):
+class ChapterDetailView(DetailView): # could be deprecated by modals
     model = Chapter
     template_name = 'chapters/profile.html'
  

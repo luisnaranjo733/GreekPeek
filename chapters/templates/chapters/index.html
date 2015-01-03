@@ -38,7 +38,7 @@
         });
         
         google.maps.event.addListener(marker_{{ chapter.pk }}, 'click', function() {
-          $('#{{ chapter.pk }}').modal('show')
+          $('#modal_{{ chapter.pk }}').modal('show')
         });
         {% endfor %}
       }
@@ -63,7 +63,7 @@
       <div id="map-canvas"></div>
       {% for chapter in chapters %}
       <!-- Modal -->
-      <div class="modal fade" id="{{ chapter.pk }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modal_{{ chapter.pk }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -71,7 +71,11 @@
               <h4 class="modal-title" id="myModalLabel">{{ chapter.name }}</h4>
             </div>
             <div class="modal-body">
-              ...
+              <ul>
+                <li>Image of chapter house</li>
+                <li>Concise description of chapter</li>
+                <li>Link to full profile</li>
+              </ul>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
