@@ -36,10 +36,16 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="/">Home</a></li>
             <li role="presentation"><a href="{% url 'chapters:index' %}">Chapters</a></li>
-            <li role="presentation"><a href="/admin">Admin</a></li>
+            <li role="presentation"><a href="#">Rush List</a></li>
           </ul>
         </nav>
+        {% if user.is_superuser %}
+        <h3 class="text-muted">
+            <a href="/admin">Washington Fraternity Life</a>
+        </h3>
+        {% else %}
         <h3 class="text-muted">Washington Fraternity Life</h3>
+        {% endif %}
       </div>
 
       {% block body %}
